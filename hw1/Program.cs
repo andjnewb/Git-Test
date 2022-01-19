@@ -7,22 +7,27 @@ namespace hw1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Program p = new Program();
+            System.Random r = new System.Random();
+            int number = r.Next(0, 100);
+            //Console.WriteLine(number);//For debugging
+            int guess = 0;
 
-            p.sayGoodbye();
+            Console.Write("Guess a number between 0 and 100: ");
+            
+            guess = Int32.Parse(Console.ReadLine());
 
-            Cat c = new Cat();
-            Cat j = new Cat("Philbert");
-            c.printCat();
-            j.printCat();
-            Console.ReadKey();
+            if (guess == number)
+            {
+                Console.WriteLine("Yay, you got it right!");
+            }
+            else 
+            {
+                Console.WriteLine("Better luck next time! You guessed " + guess + " but the answer was " + number);
+            }
+            
         }
 
-        void sayGoodbye()
-        {
-            Console.WriteLine("Goodbye World!");
-        }
+     
     }
 
 
